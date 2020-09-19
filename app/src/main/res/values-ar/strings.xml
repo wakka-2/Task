@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Login Strings-->
+    <string name="username">اسم المستخدم</string>
+    <string name="password">كلمة المرور</string>
+    <string name="login">دخول</string>
+    <string name="did_you_forget_password">هل نسيت كلمة المرور الخاصة بك؟</string>
+    <string name="get_a_new_password">احصل على كلمة مرور جديدة</string>
+    <string name="you_do_not_have_an_account">ليس لديك حساب؟ تسجيل جديد</string>
+    <string name="create_a_new_account">تسجيل جديد</string>
+    <string name="terms_and_conditions"> الشروط والاحكام </string>
+    <string name="error_login">الرجاء التحقق من البيانات المدخلة</string>
+
+
+    <!--Signup Strings-->
+    <string name="new_registration">تسجيل جديد</string>
+    <string name="id">الهوية</string>
+    <string name="name">الاسم الكريم</string>
+    <string name="phone">رقم الجوال</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="confirmPass">تأكيد كلمة المرور</string>
+    <string name="uploadPic">رفع صورة شخصية</string>
+    <string name="id_error">الرجاء ادخال رقم الهوية</string>
+    <string name="name_error">الرجاء ادخال الاسم</string>
+    <string name="error_phone">الرجاء ادخال رقم الجوال</string>
+    <string name="email_error">الرجاء ادخال البريد الالكتروني</string>
+    <string name="error_password">الرجاء ادخال كلمة المرور</string>
+    <string name="error_confirm">كلمة المرور غير متطابقة</string>
+    <string name="error_pass_length">كلمة المرور يجب الا تقل عن 6 خانات</string>
+
+    <!--Profile Strings-->
+    <string name="basic_info">المعلومات الأساسية</string>
+    <string name="name_only">الاسم</string>
+    <string name="my_profile">ملفي الضخصي</string>
+    <string name="phone_num">رقم الجوال</string>
+    <string name="id_num">رقم الهوية</string>
+    <string name="training_course">سجل الدورات التدريبية</string>
+    <string name="course_record">سجل الدورات</string>
+    <string name="add_course">اضافة دورة</string>
+
+    <!--Course Strings-->
+    <string name="course_title">عنوان الدورة</string>
+    <string name="city">المدينة</string>
+    <string name="issued_by">الجهة</string>
+    <string name="certificate_date">تاريخ الشهادة</string>
+    <string name="duration">المدة</string>
+    <string name="rating">التقييم</string>
+    <string name="download">تحميل المرفق</string>
+    <string name="attach">ارفاق صورة الشهادة</string>
+    <string name="save">حفظ</string>
+    <string name="title_error">الرجاء ادخال عنوان الدورة</string>
+    <string name="issed_by_error">الرجاء ادخال جهة الدورة</string>
+    <string name="date_error">الرجاء ادخال تاريخ الشهادة</string>
+    <string name="duration_error">الرجاء ادخال مدة الدورة</string>
+    <string name="rating_error">الرجاء ادخال تقييم الدورة</string>
+    <string name="city_error">الرجاء اختيار مدينة</string>
+
+
+    <string name="change_language">تغيير اللغة</string>
+    <string name="logout">تسجيل الخروج</string>
+
+    <string name="hello">مرحباً \n قم بتسحيل الدخول</string>
+    <string name="remember">تذكرني</string>
+
+    <string-array name="cities_list">
+        <item>مكة المكرمة</item>
+        <item>جدة</item>
+        <item>الطائف</item>
+        <item>المدينة المنورة</item>
+        <item>أبها</item>
+        <item>الرياض</item>
+        <item>الدمام</item>
+    </string-array>
+
+</resources>

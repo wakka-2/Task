@@ -1,0 +1,31 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="19.43dp"
+    android:height="19.434dp"
+    android:viewportWidth="19.43"
+    android:viewportHeight="19.434">
+  <path
+      android:pathData="M4.35,8.464a0.314,0.314 0,0 0,-0.313 0.313v1.881a0.313,0.313 0,0 0,0.627 0L4.664,8.782A0.314,0.314 0,0 0,4.35 8.464Z"
+      android:strokeWidth="0.5"
+      android:fillColor="#b73967"
+      android:strokeColor="#b73967"/>
+  <path
+      android:pathData="M4.359,0.341 L1.395,1.534A1.458,1.458 0,0 0,0.25 3.092L0.25,16.345a1.454,1.454 0,0 0,1.137 1.555l2.978,1.2a1.234,1.234 0,0 0,0.44 0.085,1.144 1.144,0 0,0 1.087,-1.26L5.892,1.515A1.125,1.125 0,0 0,4.359 0.341ZM5.266,17.923c0,0.376 -0.185,0.629 -0.46,0.629a0.617,0.617 0,0 1,-0.213 -0.041l-2.979,-1.2c-0.592,-0.221 -0.736,-0.41 -0.736,-0.966L0.878,3.092c0,-0.556 0.145,-0.745 0.744,-0.969L4.586,0.934A0.62,0.62 0,0 1,4.805 0.886c0.276,0 0.461,0.253 0.461,0.629Z"
+      android:strokeWidth="0.5"
+      android:fillColor="#b73967"
+      android:strokeColor="#b73967"/>
+  <path
+      android:pathData="M6.853,2.134h4.428a0.942,0.942 0,0 1,0.94 0.94v4.7a0.313,0.313 0,0 0,0.627 0v-4.7a1.569,1.569 0,0 0,-1.567 -1.567h-4.428a0.313,0.313 0,0 0,0 0.627Z"
+      android:strokeWidth="0.5"
+      android:fillColor="#b73967"
+      android:strokeColor="#b73967"/>
+  <path
+      android:pathData="M12.536,11.345a0.313,0.313 0,0 0,-0.313 0.313v4.7a0.942,0.942 0,0 1,-0.94 0.94L6.893,17.298a0.313,0.313 0,1 0,0 0.627h4.389a1.569,1.569 0,0 0,1.567 -1.567v-4.7A0.313,0.313 0,0 0,12.536 11.345Z"
+      android:strokeWidth="0.5"
+      android:fillColor="#b73967"
+      android:strokeColor="#b73967"/>
+  <path
+      android:pathData="M19.155,9.598a0.313,0.313 0,0 0,-0.068 -0.1l-3.134,-3.135a0.313,0.313 0,0 0,-0.443 0.443l2.6,2.6L7.58,9.406a0.313,0.313 0,0 0,0 0.627h10.528l-2.6,2.6a0.313,0.313 0,1 0,0.443 0.443l3.134,-3.134a0.314,0.314 0,0 0,0.068 -0.342Z"
+      android:strokeWidth="0.5"
+      android:fillColor="#b73967"
+      android:strokeColor="#b73967"/>
+</vector>

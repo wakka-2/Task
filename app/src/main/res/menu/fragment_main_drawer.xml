@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/profileFragment"
+            android:icon="@drawable/ic_profile"
+            android:title="@string/my_profile"/>
+        <item
+            android:id="@+id/changeLang"
+            android:icon="@drawable/ic_translation"
+            android:title="@string/change_language"/>
+        <item
+            android:id="@+id/logoutFragment"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/logout"/>
+
+
+    </group>
+</menu>

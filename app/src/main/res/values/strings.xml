@@ -1,3 +1,77 @@
 <resources>
     <string name="app_name">Task</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Login Strings-->
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="did_you_forget_password">Did you forget your password?</string>
+    <string name="get_a_new_password">Get a new password</string>
+    <string name="you_do_not_have_an_account">Don\'t have an account? New Registration</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="terms_and_conditions">Terms And Conditions</string>
+    <string name="hello">Hello, Please Login</string>
+    <string name="remember">Remember Me</string>
+    <string name="error_login">Kindly Check Your Entries</string>
+
+    <!--Signup Strings-->
+    <string name="new_registration">New Registration</string>
+    <string name="id">Identity</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="confirmPass">Confirm Password</string>
+    <string name="uploadPic">Upload Personal Picture</string>
+    <string name="id_error">Please Enter Your ID</string>
+    <string name="name_error">Please Enter Your Name</string>
+    <string name="error_phone">Please Enter Your Phone</string>
+    <string name="email_error">Please Enter Your Email</string>
+    <string name="error_password">Please Enter Your Password</string>
+    <string name="error_confirm">Password doesn\'t match</string>
+    <string name="error_pass_length">password must be at least 6 characters</string>
+
+
+
+
+    <!--Profile Strings-->
+    <string name="basic_info">Basic Information</string>
+    <string name="name_only">Name</string>
+    <string name="my_profile">My Profile</string>
+    <string name="phone_num">Phone Number</string>
+    <string name="id_num">Identity Number</string>
+    <string name="training_course">Training Courses Record</string>
+    <string name="course_record">Courses Record</string>
+    <string name="add_course">Add Course</string>
+
+    <!--Course Strings-->
+    <string name="course_title">Course Title</string>
+    <string name="city">City</string>
+    <string name="issued_by">Issued By</string>
+    <string name="certificate_date">Certificate Date</string>
+    <string name="duration">Duration</string>
+    <string name="rating">Rating</string>
+    <string name="download">Download Attachment</string>
+    <string name="attach">Attach Certificate Picture</string>
+    <string name="title_error">Please Enter Course Title</string>
+    <string name="issed_by_error">Please Enter Course Issued By</string>
+    <string name="date_error">Please Enter Course Certificate Date</string>
+    <string name="duration_error">Please Enter Course Duration</string>
+    <string name="rating_error">Please Enter Course Rating</string>
+    <string name="city_error">Please Select a City</string>
+    <string name="save">Save</string>
+
+    <string name="change_language">Change Language</string>
+    <string name="logout">Logout</string>
+
+    <string-array name="cities_list">
+        <item>Makkah</item>
+        <item>Jeddah</item>
+        <item>Taif</item>
+        <item>Madinah</item>
+        <item>Abha</item>
+        <item>Riyadh</item>
+        <item>Dammam</item>
+    </string-array>
 </resources>
