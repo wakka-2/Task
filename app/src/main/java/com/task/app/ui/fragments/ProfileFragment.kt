@@ -63,34 +63,14 @@ class ProfileFragment : BaseFragment() {
                     bitmap = ImageDecoder.decodeBitmap(source)
                 } catch (e: Exception) {
                     //Image is deleted
-                    Toast.makeText(requireContext(), "Image is deleted/n$e", Toast.LENGTH_LONG)
-                        .show()
+//                    Toast.makeText(requireContext(), "Image is deleted/n$e", Toast.LENGTH_LONG)
+//                        .show()
                 }
             }
             if (bitmap != null) {
                 ivProfile.setImageBitmap(bitmap)
             }
         }
-    }
-
-    private fun getRealPathFromURI_API19(context: Context, uri: Uri?): String {
-        var filePath = ""
-        val wholeID = DocumentsContract.getDocumentId(uri)
-        // Split at colon, use second item in the array
-        val id = wholeID.split(":").toTypedArray()[1]
-        val column = arrayOf(MediaStore.Audio.Media.DATA)
-        // where id is equal to
-        val sel = MediaStore.Images.Media._ID + "=?"
-        val cursor: Cursor? = context.contentResolver.query(
-            MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-            column, sel, arrayOf(id), null
-        )
-        val columnIndex: Int = cursor?.getColumnIndex(column[0])!!
-        if (cursor.moveToFirst()) {
-            filePath = cursor.getString(columnIndex)
-        }
-        cursor.close()
-        return filePath
     }
 
     private fun navigationClicks(view: View) {
