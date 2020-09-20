@@ -3,13 +3,10 @@ package com.task.app.ui.fragments
 import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog
-import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
@@ -23,22 +20,26 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.github.msarhan.ummalqura.calendar.UmmalquraCalendar
 import com.task.app.R
 import com.task.app.model.Course
 import com.task.app.model.User
 import com.task.app.room.UserViewModel
 import com.task.app.util.base.BaseFragment
 import com.task.app.util.shared.SharedPrefsUtil
+import com.zeugmasolutions.localehelper.LocaleHelper
 import kotlinx.android.synthetic.main.fragment_add_course.*
+import net.alhazmy13.hijridatepicker.date.gregorian.GregorianDatePickerDialog
+import net.alhazmy13.hijridatepicker.date.hijri.HijriDatePickerDialog
 import java.io.ByteArrayOutputStream
 import java.util.*
 
-class AddCourseFragment : BaseFragment() {
+class AddCourseFragment : BaseFragment(), HijriDatePickerDialog.OnDateSetListener,
+    GregorianDatePickerDialog.OnDateSetListener {
 
     private lateinit var city:String
     private lateinit var mUserViewModel: UserViewModel
     private var user: User?= null
-    private var mDateSetListener: DatePickerDialog.OnDateSetListener? = null
     private var date: String? = null
     private val RC_SELECT_IMAGE = 102
     private var selectedImageUri: String = ""
@@ -103,7 +104,12 @@ class AddCourseFragment : BaseFragment() {
 
             }
 
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 city = stringArray[position]
             }
 
@@ -134,11 +140,11 @@ class AddCourseFragment : BaseFragment() {
                 false
             }
             city.isEmpty() ->{
-                showSnackBar(requireView(),resources.getString(R.string.city_error))
+                showSnackBar(requireView(), resources.getString(R.string.city_error))
                 false
             }
             selectedImageUri.isEmpty() ->{
-                showSnackBar(requireView(),resources.getString(R.string.certificate_error))
+                showSnackBar(requireView(), resources.getString(R.string.certificate_error))
                 false
             }
             else -> {
@@ -148,41 +154,29 @@ class AddCourseFragment : BaseFragment() {
     }
     private fun showDate() {
         etDate.setOnClickListener {
-            val cal = Calendar.getInstance()
-            val year = cal.get(Calendar.YEAR)
-            val month = cal.get(Calendar.MONTH)
-            val day = cal.get(Calendar.DAY_OF_MONTH)
-
-            val dialog = DatePickerDialog(
-                requireContext(),
-                android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                mDateSetListener,
-                year, month, day
-            )
-            dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            dialog.show()
-        }
-        mDateSetListener = DatePickerDialog.OnDateSetListener { datePicker, year, month, day ->
-            var month = month
-            month += 1
-            if (day < 10 && month < 10) {
-                val s = "0$day"
-                val s2 = "0$month"
-                date = "$year/$s2/$s"
-            } else {
-                date = if (month < 10) {
-                    val s2 = "0$month"
-                    "$year/$s2/$day"
-                } else {
-                    if (day < 10) {
-                        val s = "0$day"
-                        "$year/$month/$s"
-                    } else {
-                        "$year/$month/$day"
-                    }
-                }
+            if (LocaleHelper.getLocale(requireContext()).displayLanguage == "English") {
+                val now = Calendar.getInstance()
+                val dpd: GregorianDatePickerDialog = GregorianDatePickerDialog.newInstance(
+                    this,
+                    now[Calendar.YEAR],
+                    now[Calendar.MONTH],
+                    now[Calendar.DAY_OF_MONTH]
+                )
+                dpd.show(requireFragmentManager(), "GregorianDatePickerDialog")
+                dpd.vibrate(false)
+                dpd.autoDismiss(true)
+            }else{
+                val now = UmmalquraCalendar()
+                val dpd = HijriDatePickerDialog.newInstance(
+                    this,
+                    now[UmmalquraCalendar.YEAR],
+                    now[UmmalquraCalendar.MONTH],
+                    now[UmmalquraCalendar.DAY_OF_MONTH]
+                )
+                dpd.show(requireFragmentManager(), "HijriDatePickerDialog")
+                dpd.vibrate(false)
+                dpd.autoDismiss(true)
             }
-            etDate.setText(date)
         }
     }
     private fun choosePic() {
@@ -214,11 +208,6 @@ class AddCourseFragment : BaseFragment() {
                 data.data!!,
                 Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
             )
-            //convert to byte array
-            val outputstream = ByteArrayOutputStream()
-            //compress selected image
-            selectedImageBmp.compress(Bitmap.CompressFormat.WEBP, 90, outputstream)
-            val selectedImageBytes = outputstream.toByteArray()
         }
     }
 
@@ -272,5 +261,61 @@ class AddCourseFragment : BaseFragment() {
         }
         val alert: AlertDialog = alertBuilder.create()
         alert.show()
+    }
+
+    override fun onDateSet(
+        view: HijriDatePickerDialog?,
+        year: Int,
+        month: Int,
+        day: Int
+    ) {
+        var month = month
+        month += 1
+        if (day < 10 && month < 10) {
+            val s = "0$day"
+            val s2 = "0$month"
+            date = "$year/$s2/$s"
+        } else {
+            date = if (month < 10) {
+                val s2 = "0$month"
+                "$year/$s2/$day"
+            } else {
+                if (day < 10) {
+                    val s = "0$day"
+                    "$year/$month/$s"
+                } else {
+                    "$year/$month/$day"
+                }
+            }
+        }
+        etDate.setText(date)
+    }
+
+    override fun onDateSet(
+        view: GregorianDatePickerDialog?,
+        year: Int,
+        month: Int,
+        day: Int
+    ) {
+        var month = month
+        month += 1
+        if (day < 10 && month < 10) {
+            val s = "0$day"
+            val s2 = "0$month"
+            date = "$year/$s2/$s"
+        } else {
+            date = if (month < 10) {
+                val s2 = "0$month"
+                "$year/$s2/$day"
+            } else {
+                if (day < 10) {
+                    val s = "0$day"
+                    "$year/$month/$s"
+                } else {
+                    "$year/$month/$day"
+                }
+            }
+        }
+        etDate.setText(date)
     }
 }

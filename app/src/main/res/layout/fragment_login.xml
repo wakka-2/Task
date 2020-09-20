@@ -90,26 +90,29 @@
             app:passwordToggleEnabled="true"
             app:hintAnimationEnabled="false"
             app:hintEnabled="false"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etEmail"
             >
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:backgroundTint="@color/colorPrimary"
-                android:drawableStart="@drawable/ic_lock"
-                android:drawablePadding="8dp"
-                android:hint="@string/password"
-                android:inputType="textPassword"
-                android:paddingStart="16sp"
-                android:paddingEnd="16sp"
-                android:textAlignment="viewStart"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_lock"
+                        android:drawablePadding="8dp"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:padding="8dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:textAlignment="viewStart"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <CheckBox
@@ -131,6 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            app:backgroundTint="@color/colorPrimaryDark"
             android:background="@drawable/dark_green_rounded_8dp_filled"
             android:fontFamily="@font/cairo_bold"
             android:text="@string/login"

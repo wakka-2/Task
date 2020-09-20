@@ -180,6 +180,7 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:layout_marginBottom="8dp"
+        app:backgroundTint="@color/colorPrimaryDark"
         android:background="@drawable/dark_green_rounded_8dp_filled"
         android:textColor="@android:color/white"/>
 

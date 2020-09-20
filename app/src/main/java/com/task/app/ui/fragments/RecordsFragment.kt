@@ -118,12 +118,14 @@ class RecordsFragment : BaseFragment() {
     private fun saveImage(bitmap: Bitmap, name: String): String {
         var path = ""
         val fos: OutputStream?
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.Q || Build.VERSION.SDK_INT == Build.VERSION_CODES.Q) {
             val resolver: ContentResolver = requireContext().contentResolver
             val contentValues = ContentValues()
             contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, "$name.jpg")
             contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpg")
             contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
+            val imagesDir = Environment.DIRECTORY_PICTURES
+            path = "$imagesDir    Task_cert$name.jpg"
             val imageUri =
                 resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
             fos = Objects.requireNonNull(imageUri)?.let { resolver.openOutputStream(it) }

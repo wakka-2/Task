@@ -1,5 +1,6 @@
 package com.task.app.ui.fragments
 
+import android.graphics.Bitmap
 import android.graphics.ImageDecoder
 import android.net.Uri
 import android.os.Build
@@ -15,6 +16,7 @@ import com.task.app.ui.fragments.ProfileFragmentDirections.Companion.actionProfi
 import com.task.app.util.base.BaseFragment
 import com.task.app.util.shared.SharedPrefsUtil
 import kotlinx.android.synthetic.main.fragment_profile.*
+import java.io.File
 
 
 class ProfileFragment : BaseFragment() {
@@ -43,17 +45,19 @@ class ProfileFragment : BaseFragment() {
         tvPhone.text = user?.phoneNum
         tvEmail.text = user?.email
         if (user?.image?.isNotEmpty()!!) {
-            val bitmap = when {
-                Build.VERSION.SDK_INT < 28 -> MediaStore.Images.Media.getBitmap(
-                    requireActivity().contentResolver,
+            var bitmap:Bitmap ?= null
+            if (Build.VERSION.SDK_INT < 28){
+                bitmap = MediaStore.Images.Media.getBitmap(
+                requireActivity().contentResolver,
+                Uri.parse(user.image))
+            }else{
+                val source = ImageDecoder.createSource(
+                    requireContext().contentResolver,
                     Uri.parse(user.image)
                 )
-                else -> {
-                    val source = ImageDecoder.createSource(
-                        requireContext().contentResolver,
-                        Uri.parse(user.image)
-                    )
-                    ImageDecoder.decodeBitmap(source)
+                val uri = Uri.parse(user.image)
+                if(File(uri.path!!).exists()) {
+                    bitmap = ImageDecoder.decodeBitmap(source)
                 }
             }
             ivProfile.setImageBitmap(bitmap)

@@ -6,7 +6,6 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
@@ -25,7 +24,6 @@ import com.task.app.util.Tools
 import com.task.app.util.base.BaseFragment
 import com.task.app.util.shared.SharedPrefsUtil
 import kotlinx.android.synthetic.main.fragment_signup.*
-import java.io.ByteArrayOutputStream
 
 
 class SignupFragment : BaseFragment() {
@@ -102,24 +100,6 @@ class SignupFragment : BaseFragment() {
 
     }
 
-    private fun checkExistId(): Boolean {
-        var exist = false
-        mUserViewModel.existsId(etId.text.trim().toString().toLong())
-            .observe(viewLifecycleOwner, {
-                exist = it
-            })
-        return exist
-    }
-
-    private fun checkExistEmail(): Boolean {
-        var exist = false
-        mUserViewModel.existsEmail(etEmail.text.trim().toString())
-            .observe(viewLifecycleOwner, {
-                exist = it
-            })
-        return exist
-    }
-
     private fun inputCheck(): Boolean {
         return when {
             etId.text.isEmpty() -> {
@@ -193,19 +173,10 @@ class SignupFragment : BaseFragment() {
             && data != null && data.data != null
         ) {
             selectedImageUri = data.data.toString()
-            val selectedImageBmp = MediaStore.Images.Media.getBitmap(
-                context?.contentResolver,
-                data.data
-            )
             requireContext().contentResolver.takePersistableUriPermission(
                 data.data!!,
                 Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
             )
-            //convert to byte array
-            val outputstream = ByteArrayOutputStream()
-            //compress selected image
-            selectedImageBmp.compress(Bitmap.CompressFormat.WEBP, 90, outputstream)
-            val selectedImageBytes = outputstream.toByteArray()
         }
     }
 
