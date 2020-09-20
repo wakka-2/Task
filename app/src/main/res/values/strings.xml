@@ -9,15 +9,16 @@
     <string name="login">Login</string>
     <string name="did_you_forget_password">Did you forget your password?</string>
     <string name="get_a_new_password">Get a new password</string>
-    <string name="you_do_not_have_an_account">Don\'t have an account? New Registration</string>
+    <string name="you_do_not_have_an_account">Don\'t have an account? Register Now</string>
     <string name="create_a_new_account">Create a new account</string>
     <string name="terms_and_conditions">Terms And Conditions</string>
     <string name="hello">Hello, Please Login</string>
     <string name="remember">Remember Me</string>
     <string name="error_login">Kindly Check Your Entries</string>
+    <string name="id_invalid">Identity Number Must Be 10 Numbers</string>
 
     <!--Signup Strings-->
-    <string name="new_registration">New Registration</string>
+    <string name="new_registration">Registration</string>
     <string name="id">Identity</string>
     <string name="name">Name</string>
     <string name="phone">Phone</string>
@@ -28,9 +29,14 @@
     <string name="name_error">Please Enter Your Name</string>
     <string name="error_phone">Please Enter Your Phone</string>
     <string name="email_error">Please Enter Your Email</string>
+    <string name="email_invalid">Please Enter a Valid Email</string>
+    <string name="phone_invalid">Please Enter a Valid Phone Number</string>
     <string name="error_password">Please Enter Your Password</string>
     <string name="error_confirm">Password doesn\'t match</string>
     <string name="error_pass_length">password must be at least 6 characters</string>
+    <string name="email_registered">This Email is Already Registered</string>
+    <string name="id_registered">This Identity Number is Already Registered</string>
+    <string name="image_error">Please Choose a Personal Image</string>
 
 
 
@@ -38,7 +44,7 @@
     <!--Profile Strings-->
     <string name="basic_info">Basic Information</string>
     <string name="name_only">Name</string>
-    <string name="my_profile">My Profile</string>
+    <string name="my_profile">Profile</string>
     <string name="phone_num">Phone Number</string>
     <string name="id_num">Identity Number</string>
     <string name="training_course">Training Courses Record</string>
@@ -60,10 +66,14 @@
     <string name="duration_error">Please Enter Course Duration</string>
     <string name="rating_error">Please Enter Course Rating</string>
     <string name="city_error">Please Select a City</string>
+    <string name="certificate_error">Please Attach Certificate Picture</string>
     <string name="save">Save</string>
+    <string name="downloaded">Downloaded at %s</string>
 
     <string name="change_language">Change Language</string>
     <string name="logout">Logout</string>
+    <string name="permission_necessary">Permission necessary</string>
+
 
     <string-array name="cities_list">
         <item>Makkah</item>

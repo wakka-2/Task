@@ -40,4 +40,10 @@ class UserViewModel(application:Application): AndroidViewModel(application) {
     fun getAllCourses(userId:Long):LiveData<List<Course>>{
         return repository.getAllCourses(userId)
     }
+    fun existsEmail(email:String): LiveData<Boolean>{
+        return repository.existsEmail(email)
+    }
+    fun existsId(id: Long): LiveData<Boolean>{
+        return repository.existsId(id)
+    }
 }

@@ -29,6 +29,13 @@ interface UserDao {
     @Query("SELECT * FROM `users table` WHERE `User Email`=(:userEmail) AND `User Password`=(:userPassword) ")
     fun login(userEmail:String,userPassword:String):LiveData<User>
 
+    //To get all courses associated with logged in user
     @Query("SELECT * FROM `courses table` WHERE `User ID`=(:userId)")
     fun getAllCourses(userId:Long):LiveData<List<Course>>
+
+    @Query("SELECT EXISTS (SELECT 1 FROM `users table` WHERE `User Email` = :email)")
+    fun existsEmail(email:String): LiveData<Boolean>
+
+    @Query("SELECT EXISTS (SELECT 1 FROM `users table` WHERE `User ID` = :id)")
+    fun existsId(id: Long): LiveData<Boolean>
 }

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Task</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!--Login Strings-->
     <string name="username">اسم المستخدم</string>
     <string name="password">كلمة المرور</string>
@@ -10,6 +14,7 @@
     <string name="create_a_new_account">تسجيل جديد</string>
     <string name="terms_and_conditions"> الشروط والاحكام </string>
     <string name="error_login">الرجاء التحقق من البيانات المدخلة</string>
+    <string name="id_invalid">رقم الهوية يجب أن يتكون من 10 خانات</string>
 
 
     <!--Signup Strings-->
@@ -24,14 +29,21 @@
     <string name="name_error">الرجاء ادخال الاسم</string>
     <string name="error_phone">الرجاء ادخال رقم الجوال</string>
     <string name="email_error">الرجاء ادخال البريد الالكتروني</string>
+    <string name="email_invalid">البريد الالكتروني غير صالح</string>
+    <string name="phone_invalid">رقم الجوال غير صالح</string>
     <string name="error_password">الرجاء ادخال كلمة المرور</string>
     <string name="error_confirm">كلمة المرور غير متطابقة</string>
     <string name="error_pass_length">كلمة المرور يجب الا تقل عن 6 خانات</string>
+    <string name="email_registered">البريد الالكتروني المدخل مسّجل مسبقاً</string>
+    <string name="certificate_error">الرجاء ارفاق صورة الشهادة</string>
+    <string name="id_registered">رقم الهوية المدخل مسّجل مسبقاً</string>
+    <string name="image_error">الرجاء اختيار صورة شخصية</string>
+
 
     <!--Profile Strings-->
     <string name="basic_info">المعلومات الأساسية</string>
     <string name="name_only">الاسم</string>
-    <string name="my_profile">ملفي الضخصي</string>
+    <string name="my_profile">الملف الشخصي</string>
     <string name="phone_num">رقم الجوال</string>
     <string name="id_num">رقم الهوية</string>
     <string name="training_course">سجل الدورات التدريبية</string>
@@ -54,6 +66,8 @@
     <string name="duration_error">الرجاء ادخال مدة الدورة</string>
     <string name="rating_error">الرجاء ادخال تقييم الدورة</string>
     <string name="city_error">الرجاء اختيار مدينة</string>
+    <string name="downloaded">تم التحميل في %s</string>
+
 
 
     <string name="change_language">تغيير اللغة</string>
@@ -61,6 +75,8 @@
 
     <string name="hello">مرحباً \n قم بتسحيل الدخول</string>
     <string name="remember">تذكرني</string>
+    <string name="permission_necessary">الاذن مطلوب</string>
+
 
     <string-array name="cities_list">
         <item>مكة المكرمة</item>

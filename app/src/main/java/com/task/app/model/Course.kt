@@ -32,5 +32,7 @@ data class Course(
     @ColumnInfo(name = "Course Duration")
     val duration: String,
     @ColumnInfo(name = "Course Rating")
-    val rating: String
+    val rating: String,
+    @ColumnInfo(name = "Certificate Image")
+    val certificateImg:String
 )

@@ -48,7 +48,7 @@ class CourseAdapter(
         holder.itemView.tvRating.text = items[position].rating
 
         holder.itemView.btnDownload.setOnClickListener {
-            clickListener.onClick(position)
+            clickListener.onClick(position,items[position].certificateImg)
         }
 
 

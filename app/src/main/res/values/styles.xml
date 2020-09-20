@@ -6,16 +6,24 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="fontFamily">@font/cairo_light</item>
     </style>
 
-    <style name="cairoTextViewStyle" parent="android:Widget.TextView">
-        <item name="android:fontFamily">@font/cairo_light</item>
-    </style>
+<!--    <style name="cairoTextViewStyle" parent="android:Widget.TextView">-->
+<!--        <item name="android:fontFamily">@font/cairo_light</item>-->
+<!--    </style>-->
+<!--    <style name="cairoEditTextStyle" parent="android:Widget.EditText">-->
+<!--        <item name="android:fontFamily">@font/cairo_light</item>-->
+<!--    </style>-->
+<!--    <style name="cairoButtonStyle" parent="android:Widget.EditText">-->
+<!--        <item name="android:fontFamily">@font/cairo_light</item>-->
+<!--    </style>-->
 
     <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
@@ -30,7 +38,7 @@
         <item name="android:textColorSecondary">@android:color/white</item>
         <item name="actionMenuTextColor">@android:color/white</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textViewStyle">@style/cairoTextViewStyle</item>
+<!--        <item name="android:textViewStyle">@style/cairoTextViewStyle</item>-->
 
     </style>
 </resources>

@@ -11,7 +11,7 @@
             android:title="@string/change_language"/>
         <item
             android:id="@+id/logoutFragment"
-            android:icon="@drawable/ic_logout"
+            android:icon="@drawable/logout"
             android:title="@string/logout"/>
 
 

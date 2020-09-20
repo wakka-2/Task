@@ -3,21 +3,27 @@ package com.task.app.ui.fragments
 import android.animation.Animator
 import android.graphics.Color
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.*
 import android.view.animation.AccelerateDecelerateInterpolator
+import androidx.core.content.ContextCompat
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import com.task.app.R
 import com.task.app.ui.activity.MainActivity
+import com.task.app.ui.fragments.MainFragmentDirections.Companion.actionMainFragmentToLoginFragment
 import com.task.app.util.Locales
 import com.task.app.util.base.BaseFragment
+import com.task.app.util.shared.SharedPrefsUtil
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.coroutines.delay
@@ -71,12 +77,13 @@ class MainFragment : BaseFragment() {
         NavigationUI.setupWithNavController(toolbar, navController, drawerLayout)
         val menu = drawerLayout.navView.menu
         val item = menu.findItem(R.id.logoutFragment)
-        //logout(item)
+        logout(item)
         item.icon.colorFilter =
             BlendModeColorFilterCompat.createBlendModeColorFilterCompat(
                 Color.RED,
                 BlendModeCompat.SRC_ATOP
             )
+        R.id.logoutFragment.setMenuTextColor(menu, R.string.logout)
         navView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener(listener)
 
@@ -93,6 +100,20 @@ class MainFragment : BaseFragment() {
                 }
             }
         }
+    }
+    private fun logout(item: MenuItem?) {
+        item?.setOnMenuItemClickListener {
+            SharedPrefsUtil.clearUser(requireContext())
+            SharedPrefsUtil.clearPreference(requireContext(),"isSignedIn")
+            findNavController().navigate(actionMainFragmentToLoginFragment())
+            true
+        }
+    }
+    private fun Int.setMenuTextColor(menu: Menu, menuTextResource: Int) {
+        val item: MenuItem = menu.findItem(this)
+        val s = SpannableString(getString(menuTextResource))
+        s.setSpan(ForegroundColorSpan(Color.RED), 0, s.length, 0)
+        item.title = s
     }
     private fun removeViewAnim() {
 

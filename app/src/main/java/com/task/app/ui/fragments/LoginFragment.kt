@@ -48,7 +48,7 @@ class LoginFragment : BaseFragment() {
     }
 
     private fun login(view: View) {
-        mUserViewModel.login(etEmail.text.trim().toString(), etPassword.text.trim().toString())
+        mUserViewModel.login(etEmail.text.trim().toString(), etPassword.text?.trim().toString())
             ?.observe(viewLifecycleOwner, { user ->
                 if (user != null) {
                     if (checkBox.isChecked) {
@@ -69,7 +69,7 @@ class LoginFragment : BaseFragment() {
                 etEmail.error = resources.getString(R.string.email_error)
                 false
             }
-            etPassword.text.isEmpty() ->{
+            etPassword.text?.isEmpty()!! ->{
                 etEmail.error = resources.getString(R.string.error_password)
                 false
             }

@@ -36,10 +36,11 @@
         app:layout_constraintTop_toBottomOf="@+id/guideline10">
 
         <ImageView
+            android:id="@+id/ivProfile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@drawable/person" />
+            android:src="@drawable/ic_profile" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -59,7 +60,6 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:orientation="vertical">
 
             <TextView
@@ -68,6 +68,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/basic_info"
+                android:fontFamily="@font/cairo_regular"
                 android:textColor="@color/colorPrimaryDark" />
 
             <LinearLayout
@@ -210,30 +211,24 @@
         app:layout_constraintTop_toBottomOf="@+id/cv2">
 
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
             android:gravity="center"
             android:minHeight="50dp"
             android:text="@string/training_course"
             android:textColor="@android:color/white"
+            android:drawablePadding="8dp"
+            app:drawableEndCompat="@drawable/ic_report"
+            app:drawableTint="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/ic_report"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@android:color/white" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

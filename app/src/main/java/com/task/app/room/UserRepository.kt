@@ -23,4 +23,10 @@ class UserRepository(private val userDao: UserDao) {
     fun getAllCourses(userId:Long):LiveData<List<Course>>{
         return userDao.getAllCourses(userId)
     }
+    fun existsEmail(email:String): LiveData<Boolean>{
+        return userDao.existsEmail(email)
+    }
+    fun existsId(id: Long): LiveData<Boolean>{
+        return userDao.existsId(id)
+    }
 }

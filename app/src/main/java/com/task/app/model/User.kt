@@ -24,4 +24,7 @@ data class User(
     @ColumnInfo(name = "User Email")
     val email:String,
     @ColumnInfo(name = "User Password")
-    val password:String)
+    val password:String,
+    @ColumnInfo(name = "User Image")
+    val image:String
+)
